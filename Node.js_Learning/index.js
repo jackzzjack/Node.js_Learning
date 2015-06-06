@@ -1,5 +1,5 @@
 // console.log("Hello World");
 
-var server = require("./server.js");
+var server = require("./server");
 
 server.start();
