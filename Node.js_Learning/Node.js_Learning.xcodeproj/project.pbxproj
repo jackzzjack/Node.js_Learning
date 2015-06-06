@@ -9,6 +9,7 @@
 /* Begin PBXFileReference section */
 		75AF6D2F1B22F9C300CC0931 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 		75AF6D301B22F9C300CC0931 /* server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = server.js; sourceTree = "<group>"; };
+		75C1FA891B23038A0053B2F1 /* route.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = route.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -23,6 +24,7 @@
 			isa = PBXGroup;
 			children = (
 				75AF6D2F1B22F9C300CC0931 /* index.js */,
+				75C1FA891B23038A0053B2F1 /* route.js */,
 				75AF6D301B22F9C300CC0931 /* server.js */,
 			);
 			name = src;
@@ -189,6 +191,7 @@
 				75AF6D2D1B22F98B00CC0931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
