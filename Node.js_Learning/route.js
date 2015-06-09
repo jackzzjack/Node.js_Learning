@@ -1,5 +1,11 @@
-function route(pathname) {
-    console.log("The Path name is " + pathname);
+function route(handle, pathname) {
+    console.log("The request name is " + pathname);
+    
+    if (typeof handle[pathname] === 'function') {
+        handle[pathname]();
+    } else {
+        console.log("No request handler found for " + pathname);
+    }
 }
 
 exports.route = route;
