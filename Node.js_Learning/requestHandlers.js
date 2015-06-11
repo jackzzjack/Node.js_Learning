@@ -1,4 +1,5 @@
-var exec = require("child_process").exec;
+// var exec = require("child_process").exec;
+var querystring = require("querystring");
 
 function start(response, postData) {
     console.log("Request Handler 'start' was called.");
@@ -42,7 +43,7 @@ function upload(response, postData) {
     console.log("Request Handler 'upload' was called.");
     
     response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("You have send " + postData);
+    response.write("You have send " + querystring.parse(postData).text);
     
     //response.write("This is Upload\n");
     
