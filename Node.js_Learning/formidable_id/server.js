@@ -1,4 +1,4 @@
-var formidable = require('formidable'),
+/*var formidable = require('formidable'),
     http = require('http'),
     sys = require("sys");
     
@@ -12,7 +12,9 @@ http.createServer(function(req, res) {
             res.write('received upload:\n\n');
             
             // sys.inspect need to research.
-            res.end(sys.inspect({ fields: fields, files: files}));
+                // inspect function means show the specific variable in standard output.
+                    // You can use key-value form with title and content. Just like following statement.
+            res.end(sys.inspect({ f: fields, files: files}));
         });
         
         return;
@@ -28,4 +30,34 @@ http.createServer(function(req, res) {
         '</form>'
     );
     
-}).listen(process.env.PORT, process.env.IP);
+}).listen(process.env.PORT, process.env.IP);*/
+
+var http = require("http");
+var url = require("url");
+
+function start(router, handle) {
+    function onRequest(request, response) {
+        var postData = "";
+        var pathname = url.parse(request.url).pathname;
+        
+        //console.log("Request is " + pathname);
+        
+        request.setEncoding("utf8");
+        
+        request.addListener("data", function(postDataChunk) {
+           postData = postData + postDataChunk;
+           console.log("Receive POST data chunk '" + postDataChunk + "'");
+        });
+        
+        request.addListener("end", function() {
+            router.route(handle, pathname, response, postData);
+        });
+        
+        //router.route(handle, pathname, response);
+    }
+    
+    http.createServer(onRequest).listen(process.env.PORT, process.env.IP);
+    console.log("On Listening");
+}
+
+exports.start = start;
