@@ -32,7 +32,7 @@ var insertDocument = function(db, callback) {
 	 // Call the callback function if it is existed.
 		callback(result);
 	});
-}
+};
 
 MongodbClient.connect(url, function(err, db) {
 	assert.equal(null, err);
