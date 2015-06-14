@@ -14,4 +14,4 @@ Reference 01-Import_the_exist_json README and node.js.
 
 ## Execute the node.js file to query the data into mongodb from node.js driver.
  
-`node query.js`
+`node XXX.js`
